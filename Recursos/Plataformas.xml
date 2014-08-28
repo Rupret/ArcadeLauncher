@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPlataforma xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Plataforma>
+    <Nombre>MAME</Nombre>
+    <RutaImagen>Imagenes\Plataformas\Titulos\MAME.png</RutaImagen>
+	<RutaEmulador>c:\Emulators\Programs\Mame\mame.exe</RutaEmulador>
+	<Parametros></Parametros>
+	<ArchivoListaDeJuegos>Mame.xml</ArchivoListaDeJuegos>
+	<RutaRoms>c:\Emulators\Programs\Mame\roms</RutaRoms>	
+  </Plataforma>
+  <Plataforma>
+    <Nombre>Super Nintendo Entertainment System</Nombre>
+    <RutaImagen>Imagenes\Plataformas\Titulos\SNES.png</RutaImagen>
+	<RutaEmulador>c:\Emulators\Programs\Mame\mame.exe</RutaEmulador>
+	<Parametros></Parametros>
+	<ArchivoListaDeJuegos>Mame.xml</ArchivoListaDeJuegos>
+	<RutaRoms>c:\Emulators\Programs\Mame\roms</RutaRoms>	
+  </Plataforma>  
+</ArrayOfPlataforma>

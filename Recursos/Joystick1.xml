@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MapeoJoystick xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <AccionesSegunBoton>
+    <ItemAccionBotonJoystick>
+      <IdBoton>Buttons0</IdBoton>
+      <Accion>Ejecutar</Accion>
+      <AccionBuscador>NULA</AccionBuscador>
+    </ItemAccionBotonJoystick>
+    <ItemAccionBotonJoystick>
+      <IdBoton>Buttons1</IdBoton>
+      <Accion>Escape</Accion>
+      <AccionBuscador>NULA</AccionBuscador>
+    </ItemAccionBotonJoystick>
+    <ItemAccionBotonJoystick>
+      <IdBoton>Buttons5</IdBoton>
+      <Accion>Buscar</Accion>
+      <AccionBuscador>NULA</AccionBuscador>
+    </ItemAccionBotonJoystick>
+    <ItemAccionBotonJoystick>
+      <IdBoton />
+      <Accion>Eliminar</Accion>
+      <AccionBuscador>NULA</AccionBuscador>
+    </ItemAccionBotonJoystick>
+    <ItemAccionBotonJoystick>
+      <IdBoton>Buttons4</IdBoton>
+      <Accion>Nada</Accion>
+      <AccionBuscador>Borrar</AccionBuscador>
+    </ItemAccionBotonJoystick>
+    <ItemAccionBotonJoystick>
+      <IdBoton>Buttons2</IdBoton>
+      <Accion>Nada</Accion>
+      <AccionBuscador>BuscarYAvanzar</AccionBuscador>
+    </ItemAccionBotonJoystick>
+  </AccionesSegunBoton>
+  <Id>0703a810-0c73-11e4-8001-444553540000</Id>
+</MapeoJoystick>

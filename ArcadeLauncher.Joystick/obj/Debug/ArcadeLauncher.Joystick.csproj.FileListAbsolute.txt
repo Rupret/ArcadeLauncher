@@ -1,0 +1,11 @@
+E:\DesarrolloJuegos\ArcadeLauncher\ArcadeLauncher.Joystick\obj\Debug\ArcadeLauncher.Joystick.csprojResolveAssemblyReference.cache
+E:\DesarrolloJuegos\ArcadeLauncher\ArcadeLauncher.Joystick\bin\Debug\ArcadeLauncher.Joystick.dll
+E:\DesarrolloJuegos\ArcadeLauncher\ArcadeLauncher.Joystick\bin\Debug\ArcadeLauncher.Joystick.pdb
+E:\DesarrolloJuegos\ArcadeLauncher\ArcadeLauncher.Joystick\bin\Debug\SharpDX.DirectInput.dll
+E:\DesarrolloJuegos\ArcadeLauncher\ArcadeLauncher.Joystick\bin\Debug\SharpDX.dll
+E:\DesarrolloJuegos\ArcadeLauncher\ArcadeLauncher.Joystick\bin\Debug\SharpDX.xml
+E:\DesarrolloJuegos\ArcadeLauncher\ArcadeLauncher.Joystick\bin\Debug\SharpDX.DirectInput.xml
+E:\DesarrolloJuegos\ArcadeLauncher\ArcadeLauncher.Joystick\obj\Debug\ArcadeLauncher.Joystick.dll
+E:\DesarrolloJuegos\ArcadeLauncher\ArcadeLauncher.Joystick\obj\Debug\ArcadeLauncher.Joystick.pdb
+E:\DesarrolloJuegos\ArcadeLauncher\ArcadeLauncher.Joystick\bin\Debug\ArcadeLauncher.Core.dll
+E:\DesarrolloJuegos\ArcadeLauncher\ArcadeLauncher.Joystick\bin\Debug\ArcadeLauncher.Core.pdb

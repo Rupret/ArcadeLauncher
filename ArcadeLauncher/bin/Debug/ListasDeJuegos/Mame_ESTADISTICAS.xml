@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfJuegoEstadistica xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <JuegoEstadistica>
+    <CantidadDeEjecuciones>7</CantidadDeEjecuciones>
+    <FechaUltimaEjecucion>2014-08-27T17:38:56.7370638-03:00</FechaUltimaEjecucion>
+    <JuegoArchivo>ssideki2.zip</JuegoArchivo>
+  </JuegoEstadistica>
+</ArrayOfJuegoEstadistica>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MapeoJoystick xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <AccionesSegunBoton>
+    <ItemAccionBotonJoystick>
+      <IdBoton>Boton0</IdBoton>
+      <Accion>Ejecutar</Accion>
+    </ItemAccionBotonJoystick>
+    <ItemAccionBotonJoystick>
+      <IdBoton>Boton1</IdBoton>
+      <Accion>PageDown</Accion>
+    </ItemAccionBotonJoystick>
+  </AccionesSegunBoton>
+  <Id>04d84a88-0218-482c-8b3d-3c2093d85c1f</Id>
+</MapeoJoystick>

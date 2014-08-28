@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcadeLauncher", "ArcadeLauncher\ArcadeLauncher.csproj", "{63436F44-3B95-4D13-97D4-FA9C8C64FA29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcadeLauncher.Configurator", "ArcadeLauncher.Configurator\ArcadeLauncher.Configurator.csproj", "{B74E8A12-85B7-4D9C-9EC8-DD55A414CD9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcadeLauncher.Joystick", "ArcadeLauncher.Joystick\ArcadeLauncher.Joystick.csproj", "{9B59BF67-BB50-43CE-8984-62905EA39125}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcadeLauncher.Spike", "ArcadeLauncher.Spike\ArcadeLauncher.Spike.csproj", "{B79BDBD2-828D-4765-8E47-E33A5D748733}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcadeLauncher.Core", "ArcadeLauncher.Core\ArcadeLauncher.Core.csproj", "{B603C95C-3B21-45D4-BD25-E68B76F63EFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63436F44-3B95-4D13-97D4-FA9C8C64FA29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63436F44-3B95-4D13-97D4-FA9C8C64FA29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63436F44-3B95-4D13-97D4-FA9C8C64FA29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63436F44-3B95-4D13-97D4-FA9C8C64FA29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B74E8A12-85B7-4D9C-9EC8-DD55A414CD9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B74E8A12-85B7-4D9C-9EC8-DD55A414CD9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B74E8A12-85B7-4D9C-9EC8-DD55A414CD9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B74E8A12-85B7-4D9C-9EC8-DD55A414CD9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B59BF67-BB50-43CE-8984-62905EA39125}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B59BF67-BB50-43CE-8984-62905EA39125}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B59BF67-BB50-43CE-8984-62905EA39125}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B59BF67-BB50-43CE-8984-62905EA39125}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B79BDBD2-828D-4765-8E47-E33A5D748733}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B79BDBD2-828D-4765-8E47-E33A5D748733}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B79BDBD2-828D-4765-8E47-E33A5D748733}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B79BDBD2-828D-4765-8E47-E33A5D748733}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B603C95C-3B21-45D4-BD25-E68B76F63EFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B603C95C-3B21-45D4-BD25-E68B76F63EFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B603C95C-3B21-45D4-BD25-E68B76F63EFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B603C95C-3B21-45D4-BD25-E68B76F63EFD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
