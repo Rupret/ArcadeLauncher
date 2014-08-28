@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{63436F44-3B95-4D13-97D4-FA9C8C64FA29}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ArcadeLauncher</RootNamespace>
+    <AssemblyName>ArcadeLauncher</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contexto.cs" />
+    <Compile Include="Controladores.cs" />
+    <Compile Include="ExtensionesPlataforma\ExtensionMame.cs" />
+    <Compile Include="Forms\MapeoAccionesTeclasBuscador.cs" />
+    <Compile Include="Controllers\SeleccionPlataformaController.cs" />
+    <Compile Include="Forms\SeleccionPlataformas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SeleccionPlataformas.Designer.cs">
+      <DependentUpon>SeleccionPlataformas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SeleccionJuegos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SeleccionJuegos.Designer.cs">
+      <DependentUpon>SeleccionJuegos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\SeleccionJuegosController.cs" />
+    <Compile Include="Plataforma.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\SeleccionPlataformas.resx">
+      <DependentUpon>SeleccionPlataformas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SeleccionJuegos.resx">
+      <DependentUpon>SeleccionJuegos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ArcadeLauncher.Configurator\ArcadeLauncher.Configurator.csproj">
+      <Project>{b74e8a12-85b7-4d9c-9ec8-dd55a414cd9d}</Project>
+      <Name>ArcadeLauncher.Configurator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArcadeLauncher.Core\ArcadeLauncher.Core.csproj">
+      <Project>{b603c95c-3b21-45d4-bd25-e68b76f63efd}</Project>
+      <Name>ArcadeLauncher.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArcadeLauncher.Joystick\ArcadeLauncher.Joystick.csproj">
+      <Project>{9b59bf67-bb50-43ce-8984-62905ea39125}</Project>
+      <Name>ArcadeLauncher.Joystick</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SeleccionJuegos.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy $(SolutionDir)\Recursos\*.* $(TargetDir) /y /e</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\packages\SharpDX.2.6.2\build\SharpDX.targets" Condition="Exists('..\packages\SharpDX.2.6.2\build\SharpDX.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
