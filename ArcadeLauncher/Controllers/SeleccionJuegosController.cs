@@ -71,10 +71,10 @@ namespace ArcadeLauncher.Controllers
         private void IniciarControladores( Controladores controladores )
         {
             if ( Contexto.Instancia.Controladores.Controlador1 != null )
-                this.AsignarEventosControlador( controladores.Controlador1, controladores.MapeoJoystick1 );
+                this.AsignarEventosControlador( controladores.Controlador1 );
 
             if ( Contexto.Instancia.Controladores.Controlador2 != null )
-                this.AsignarEventosControlador( controladores.Controlador2, controladores.MapeoJoystick2 );
+                this.AsignarEventosControlador( controladores.Controlador2 );
 
         }
 
@@ -90,14 +90,14 @@ namespace ArcadeLauncher.Controllers
         private void DetenerEventosControlador( Controlador controlador )
         {
             controlador.movimientoJoystick_Abajo -= MoverHaciaAbajo;
-            controlador.movimientoJoystick_Abajo -= MoverHaciaAbajo;
             controlador.movimientoJoystick_Arriba -= MoverHaciaArriba;
-            controlador.movimientoJoystick_Arriba -= MoverHaciaArriba;
+            controlador.movimientoJoystick_Derecha -= controlador_movimientoJoystick_Derecha;
+            controlador.movimientoJoystick_Izquierda -= controlador_movimientoJoystick_Izquierda;
             controlador.botonPresionado -= controlador_botonPresionado;
         }
 
-        private void AsignarEventosControlador( Controlador controlador, MapeoJoystick mapeo )
-        {
+        private void AsignarEventosControlador( Controlador controlador )
+        {            
             controlador.movimientoJoystick_Abajo += MoverHaciaAbajo;
             controlador.movimientoJoystick_Arriba += MoverHaciaArriba;
             controlador.movimientoJoystick_Derecha += controlador_movimientoJoystick_Derecha;
@@ -176,6 +176,9 @@ namespace ArcadeLauncher.Controllers
                 case EnumAcciones.CambiarListaDeJuegos:
                     this.OrdenarPorMasJugados();
                     break;
+                case EnumAcciones.MatarEmulador:
+                    this.CerrarEmulador();
+                    break;
                 default:
                     break;
             }
@@ -241,5 +244,9 @@ namespace ArcadeLauncher.Controllers
             this.DetenerControladores( Contexto.Instancia.Controladores );
         }
 
+        public void CerrarEmulador()
+        {
+            this.PlataformaSeleccionada.CerrarEmulador();
+        }
     }
 }

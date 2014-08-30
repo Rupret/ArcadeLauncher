@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfJuegoEstadistica xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <JuegoEstadistica>
-    <CantidadDeEjecuciones>7</CantidadDeEjecuciones>
-    <FechaUltimaEjecucion>2014-08-27T17:38:56.7370638-03:00</FechaUltimaEjecucion>
+    <CantidadDeEjecuciones>37</CantidadDeEjecuciones>
+    <FechaUltimaEjecucion>2014-08-30T15:06:06.9920024-03:00</FechaUltimaEjecucion>
     <JuegoArchivo>ssideki2.zip</JuegoArchivo>
+  </JuegoEstadistica>
+  <JuegoEstadistica>
+    <CantidadDeEjecuciones>2</CantidadDeEjecuciones>
+    <FechaUltimaEjecucion>2014-08-30T14:30:39.3413077-03:00</FechaUltimaEjecucion>
+    <JuegoArchivo>kinst2.zip</JuegoArchivo>
   </JuegoEstadistica>
 </ArrayOfJuegoEstadistica>

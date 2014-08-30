@@ -27,24 +27,27 @@ namespace ArcadeLauncher.Forms
             InitializeComponent();
             this.controller = new SeleccionPlataformaController( this );
             this.controller.Refrescar += controller_Refrescar;
-            this.controller.Escape += controller_Escape;
+            //this.controller.Escape += controller_Escape;
 
             this.ImagenCentral.ImageLocation = Path.Combine( Contexto.Instancia.RutaAplicacion, this.controller.PlataformaSeleccionada.RutaImagen );
 
             this.LlenarPlataformasVisual();
             this.RefrescarVista();
+
+            if ( Screen.PrimaryScreen.Bounds.Width == 800 && Screen.PrimaryScreen.Bounds.Height == 600 )
+                this.Bounds = Screen.PrimaryScreen.Bounds;
         }
 
-        private void controller_Escape( object sender, EventArgs e )
-        {
-            if ( this.InvokeRequired )
-            {
-                SinParametrosCallback callback = new SinParametrosCallback( this.Close );
-                this.Invoke( callback );
-            }
-            else
-                this.Close();
-        }
+        //private void controller_Escape( object sender, EventArgs e )
+        //{
+        //    if ( this.InvokeRequired )
+        //    {
+        //        SinParametrosCallback callback = new SinParametrosCallback( this.Close );
+        //        this.Invoke( callback );
+        //    }
+        //    else
+        //        this.Close();
+        //}
 
         private void controller_Refrescar( object sender, EventArgs e )
         {

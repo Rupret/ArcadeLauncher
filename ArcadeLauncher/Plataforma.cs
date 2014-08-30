@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Xml;
 using ArcadeLauncher.Core;
@@ -11,6 +12,11 @@ namespace ArcadeLauncher
 {
     public class Plataforma
     {
+        [DllImport( "User32.dll" )]
+        static extern int SetForegroundWindow( IntPtr point );
+
+        private Process proceso;
+
         public event EventHandler FinalizoPrograma;
         public string Nombre { get; set; }
         public string RutaImagen { get; set; }
@@ -19,6 +25,9 @@ namespace ArcadeLauncher
         public string ArchivoListaDeJuegos { get; set; }
         public string RutaRoms { get; set; }
         public string UltimoJuegoEjecutado { get; set; }
+        public string RutaImagenesJuegos { get; set; }
+        public string RutaVideosJuegos { get; set; }
+
         public List<Juego> Juegos { get { return this._juegos; } set { this._juegos = value; } }
         [NonSerializedAttribute]
         private List<Juego> _juegos;
@@ -108,12 +117,21 @@ namespace ArcadeLauncher
             string parametros = this.ObtenerParametros( juego );
 
             Process proceso = new Process();
+            this.proceso = proceso;
             proceso.StartInfo = new ProcessStartInfo( Path.GetFileName( this.RutaEmulador ), parametros );
             proceso.StartInfo.WorkingDirectory = Path.GetDirectoryName( this.RutaEmulador );
             proceso.StartInfo.CreateNoWindow = true;
             proceso.EnableRaisingEvents = true;
             proceso.Exited += proceso_Exited;
             proceso.Start();
+        }
+
+        public void CerrarEmulador()
+        {
+            if ( this.proceso != null && !this.proceso.HasExited )
+            {
+                this.proceso.Kill();
+            }
         }
 
         private string ObtenerParametros( Juego juego )
@@ -155,6 +173,8 @@ namespace ArcadeLauncher
 
         private void proceso_Exited( object sender, EventArgs e )
         {
+            this.proceso.Dispose();
+            this.proceso = null;
             if ( this.FinalizoPrograma != null )
                 this.FinalizoPrograma( sender, e );
         }

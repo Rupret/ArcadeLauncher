@@ -6,7 +6,9 @@
 	<RutaEmulador>c:\Emulators\Programs\Mame\mame.exe</RutaEmulador>
 	<Parametros></Parametros>
 	<ArchivoListaDeJuegos>Mame.xml</ArchivoListaDeJuegos>
-	<RutaRoms>c:\Emulators\Programs\Mame\roms</RutaRoms>	
+	<RutaRoms>c:\Emulators\Programs\Mame\roms</RutaRoms>
+	<RutaImagenesJuegos></RutaImagenesJuegos>
+	<RutaVideosJuegos></RutaVideosJuegos>
   </Plataforma>
   <Plataforma>
     <Nombre>Super Nintendo Entertainment System</Nombre>
@@ -15,5 +17,7 @@
 	<Parametros></Parametros>
 	<ArchivoListaDeJuegos>Mame.xml</ArchivoListaDeJuegos>
 	<RutaRoms>c:\Emulators\Programs\Mame\roms</RutaRoms>	
+	<RutaImagenesJuegos></RutaImagenesJuegos>
+	<RutaVideosJuegos></RutaVideosJuegos>
   </Plataforma>  
 </ArrayOfPlataforma>

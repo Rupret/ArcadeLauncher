@@ -51,6 +51,7 @@
             this.ImagenPlataforma = new System.Windows.Forms.PictureBox();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.lblListaDeJuegos = new System.Windows.Forms.Label();
+            this.lblResultadoBusqueda = new System.Windows.Forms.Label();
             this.panelTitulos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImagenPlataforma)).BeginInit();
             this.SuspendLayout();
@@ -58,6 +59,7 @@
             // lblTitulo1
             // 
             this.lblTitulo1.AutoSize = true;
+            this.lblTitulo1.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo1.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo1.ForeColor = System.Drawing.Color.White;
             this.lblTitulo1.Location = new System.Drawing.Point(1, 5);
@@ -89,12 +91,13 @@
             this.panelTitulos.Controls.Add(this.lblTitulo1);
             this.panelTitulos.Location = new System.Drawing.Point(2, 60);
             this.panelTitulos.Name = "panelTitulos";
-            this.panelTitulos.Size = new System.Drawing.Size(489, 535);
+            this.panelTitulos.Size = new System.Drawing.Size(793, 535);
             this.panelTitulos.TabIndex = 2;
             // 
             // lblTitulo18
             // 
             this.lblTitulo18.AutoSize = true;
+            this.lblTitulo18.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo18.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo18.ForeColor = System.Drawing.Color.White;
             this.lblTitulo18.Location = new System.Drawing.Point(1, 510);
@@ -106,6 +109,7 @@
             // lblTitulo17
             // 
             this.lblTitulo17.AutoSize = true;
+            this.lblTitulo17.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo17.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo17.ForeColor = System.Drawing.Color.White;
             this.lblTitulo17.Location = new System.Drawing.Point(1, 483);
@@ -117,6 +121,7 @@
             // lblTitulo16
             // 
             this.lblTitulo16.AutoSize = true;
+            this.lblTitulo16.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo16.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo16.ForeColor = System.Drawing.Color.White;
             this.lblTitulo16.Location = new System.Drawing.Point(1, 456);
@@ -128,6 +133,7 @@
             // lblTitulo15
             // 
             this.lblTitulo15.AutoSize = true;
+            this.lblTitulo15.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo15.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo15.ForeColor = System.Drawing.Color.White;
             this.lblTitulo15.Location = new System.Drawing.Point(1, 429);
@@ -139,6 +145,7 @@
             // lblTitulo14
             // 
             this.lblTitulo14.AutoSize = true;
+            this.lblTitulo14.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo14.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo14.ForeColor = System.Drawing.Color.White;
             this.lblTitulo14.Location = new System.Drawing.Point(1, 402);
@@ -150,6 +157,7 @@
             // lblTitulo13
             // 
             this.lblTitulo13.AutoSize = true;
+            this.lblTitulo13.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo13.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo13.ForeColor = System.Drawing.Color.White;
             this.lblTitulo13.Location = new System.Drawing.Point(1, 375);
@@ -161,6 +169,7 @@
             // lblTitulo12
             // 
             this.lblTitulo12.AutoSize = true;
+            this.lblTitulo12.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo12.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo12.ForeColor = System.Drawing.Color.White;
             this.lblTitulo12.Location = new System.Drawing.Point(1, 348);
@@ -172,6 +181,7 @@
             // lblTitulo11
             // 
             this.lblTitulo11.AutoSize = true;
+            this.lblTitulo11.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo11.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo11.ForeColor = System.Drawing.Color.White;
             this.lblTitulo11.Location = new System.Drawing.Point(1, 321);
@@ -183,6 +193,7 @@
             // lblTitulo10
             // 
             this.lblTitulo10.AutoSize = true;
+            this.lblTitulo10.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo10.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo10.ForeColor = System.Drawing.Color.White;
             this.lblTitulo10.Location = new System.Drawing.Point(1, 294);
@@ -194,6 +205,7 @@
             // lblTituloCentral
             // 
             this.lblTituloCentral.AutoSize = true;
+            this.lblTituloCentral.BackColor = System.Drawing.Color.Transparent;
             this.lblTituloCentral.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloCentral.ForeColor = System.Drawing.Color.Tomato;
             this.lblTituloCentral.Location = new System.Drawing.Point(3, 246);
@@ -205,6 +217,7 @@
             // lblTitulo9
             // 
             this.lblTitulo9.AutoSize = true;
+            this.lblTitulo9.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo9.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo9.ForeColor = System.Drawing.Color.White;
             this.lblTitulo9.Location = new System.Drawing.Point(1, 221);
@@ -216,6 +229,7 @@
             // lblTitulo6
             // 
             this.lblTitulo6.AutoSize = true;
+            this.lblTitulo6.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo6.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo6.ForeColor = System.Drawing.Color.White;
             this.lblTitulo6.Location = new System.Drawing.Point(1, 140);
@@ -227,6 +241,7 @@
             // lblTitulo8
             // 
             this.lblTitulo8.AutoSize = true;
+            this.lblTitulo8.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo8.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo8.ForeColor = System.Drawing.Color.White;
             this.lblTitulo8.Location = new System.Drawing.Point(1, 194);
@@ -238,6 +253,7 @@
             // lblTitulo3
             // 
             this.lblTitulo3.AutoSize = true;
+            this.lblTitulo3.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo3.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo3.ForeColor = System.Drawing.Color.White;
             this.lblTitulo3.Location = new System.Drawing.Point(1, 59);
@@ -249,6 +265,7 @@
             // lblTitulo7
             // 
             this.lblTitulo7.AutoSize = true;
+            this.lblTitulo7.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo7.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo7.ForeColor = System.Drawing.Color.White;
             this.lblTitulo7.Location = new System.Drawing.Point(1, 167);
@@ -260,6 +277,7 @@
             // lblTitulo5
             // 
             this.lblTitulo5.AutoSize = true;
+            this.lblTitulo5.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo5.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo5.ForeColor = System.Drawing.Color.White;
             this.lblTitulo5.Location = new System.Drawing.Point(1, 113);
@@ -271,6 +289,7 @@
             // lblTitulo2
             // 
             this.lblTitulo2.AutoSize = true;
+            this.lblTitulo2.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo2.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo2.ForeColor = System.Drawing.Color.White;
             this.lblTitulo2.Location = new System.Drawing.Point(1, 32);
@@ -282,6 +301,7 @@
             // lblTitulo4
             // 
             this.lblTitulo4.AutoSize = true;
+            this.lblTitulo4.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo4.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo4.ForeColor = System.Drawing.Color.White;
             this.lblTitulo4.Location = new System.Drawing.Point(1, 86);
@@ -304,7 +324,7 @@
             this.txtBusqueda.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBusqueda.Location = new System.Drawing.Point(7, 15);
             this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(481, 40);
+            this.txtBusqueda.Size = new System.Drawing.Size(323, 40);
             this.txtBusqueda.TabIndex = 5;
             this.txtBusqueda.Visible = false;
             this.txtBusqueda.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBusqueda_KeyDown);
@@ -320,6 +340,19 @@
             this.lblListaDeJuegos.TabIndex = 17;
             this.lblListaDeJuegos.Text = "Lista de juegos";
             // 
+            // lblResultadoBusqueda
+            // 
+            this.lblResultadoBusqueda.AutoSize = true;
+            this.lblResultadoBusqueda.BackColor = System.Drawing.Color.Transparent;
+            this.lblResultadoBusqueda.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResultadoBusqueda.ForeColor = System.Drawing.Color.Tomato;
+            this.lblResultadoBusqueda.Location = new System.Drawing.Point(334, 24);
+            this.lblResultadoBusqueda.Name = "lblResultadoBusqueda";
+            this.lblResultadoBusqueda.Size = new System.Drawing.Size(147, 27);
+            this.lblResultadoBusqueda.TabIndex = 17;
+            this.lblResultadoBusqueda.Text = "999 resultados";
+            this.lblResultadoBusqueda.Visible = false;
+            // 
             // SeleccionJuegos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -327,8 +360,9 @@
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.ControlBox = false;
-            this.Controls.Add(this.txtBusqueda);
+            this.Controls.Add(this.lblResultadoBusqueda);
             this.Controls.Add(this.ImagenPlataforma);
+            this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.panelTitulos);
             this.Controls.Add(this.lblListaDeJuegos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -371,6 +405,7 @@
         private System.Windows.Forms.PictureBox ImagenPlataforma;
         private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.Label lblListaDeJuegos;
+        private System.Windows.Forms.Label lblResultadoBusqueda;
     }
 }
 

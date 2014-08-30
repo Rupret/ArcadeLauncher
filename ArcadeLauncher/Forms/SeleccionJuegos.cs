@@ -37,6 +37,9 @@ namespace ArcadeLauncher.Forms
             this.InicializarCaracteres();
             this.LlenarListasDeLabels();
             this.RefrescarVista();
+
+            if ( Screen.PrimaryScreen.Bounds.Width == 800 && Screen.PrimaryScreen.Bounds.Height == 600 )
+                this.Bounds = Screen.PrimaryScreen.Bounds;
         }
 
         private void CrearFormController( Plataforma plataforma )
@@ -188,6 +191,10 @@ namespace ArcadeLauncher.Forms
                 case Keys.O:
                     this.controller.OrdenarPorMasJugados();
                     break;
+
+                case Keys.C:
+                    this.controller.CerrarEmulador();
+                    break;
             }
 
         }
@@ -207,7 +214,9 @@ namespace ArcadeLauncher.Forms
             }
             else
             {
-                if ( this.controller.JuegoSeleccionado != null )
+                if ( this.controller.JuegoSeleccionado == null )
+                    this.BlanquearTitulos();
+                else
                 {
                     this.lblTituloCentral.Text = this.controller.JuegoSeleccionado.Nombre;
                     int indiceMenor = this.controller.IndiceJuegoSeleccionado - 1;
@@ -237,6 +246,21 @@ namespace ArcadeLauncher.Forms
             }
         }
 
+        private void BlanquearTitulos()
+        {
+            this.lblResultadoBusqueda.Text = "0 resultados";
+            this.lblTituloCentral.Text = "No hay juegos bajo ese filtro";
+            for ( int i = this.titulosJuegosInferior.Count - 1; i >= 0; i-- )
+            {
+                this.titulosJuegosInferior[ i ].Text = string.Empty;
+                this.Refresh();
+            }
+            for ( int i = 0; i < this.titulosJuegosSuperior.Count; i++ )
+            {
+                this.titulosJuegosSuperior[ i ].Text = string.Empty;
+                this.Refresh();
+            }
+        }
         #region búsqueda
 
         private void SwitchActivarBusqueda()
@@ -253,11 +277,14 @@ namespace ArcadeLauncher.Forms
                 {
                     this.txtBusqueda.Focus();
                     this.txtBusqueda.Text = string.Empty;
+                    this.indiceLetraActual = 0;
+                    this.txtBusqueda.Text = this.caracteres[ this.indiceLetraActual ].ToString();
                 }
                 else
                 {
                     this.controller.Filtro = string.Empty;
                     this.RefrescarVista();
+                    this.lblResultadoBusqueda.Visible = false;
                 }
             }
         }
@@ -302,7 +329,14 @@ namespace ArcadeLauncher.Forms
 
         private void BorrarCaracter()
         {
-            this.txtBusqueda.Text = this.txtBusqueda.Text.Substring( 0, this.txtBusqueda.Text.Length - 1 );
+            if ( this.txtBusqueda.Text.Length > 1 )
+            {
+                this.txtBusqueda.Text = this.txtBusqueda.Text.Substring( 0, this.txtBusqueda.Text.Length - 1 );
+                this.controller.Filtro = this.txtBusqueda.Text.Substring( 0, this.txtBusqueda.Text.Length - 1 );
+
+                this.lblResultadoBusqueda.Text = string.Format( "{0} resultados", this.controller.Juegos.Count );
+                this.RefrescarVista();
+            }
         }
 
         private void BuscadorBuscarYAvanzar()
@@ -313,6 +347,8 @@ namespace ArcadeLauncher.Forms
             this.txtBusqueda.Text = this.txtBusqueda.Text + this.caracteres[ this.indiceLetraActual ].ToString();
             this.txtBusqueda.SelectionStart = this.txtBusqueda.Text.Length - 1;
             this.txtBusqueda.SelectionLength = 1;
+            this.lblResultadoBusqueda.Text = string.Format( "{0} resultados", this.controller.Juegos.Count );
+            this.lblResultadoBusqueda.Visible = true;
         }
 
         private void BuscadorAnteriorLetra()
@@ -322,7 +358,10 @@ namespace ArcadeLauncher.Forms
             else
                 this.indiceLetraActual--;
 
-            this.txtBusqueda.Text = this.txtBusqueda.Text.Substring( 0, this.txtBusqueda.Text.Length - 1 ) + this.caracteres[ this.indiceLetraActual ];
+            if ( string.IsNullOrEmpty( this.txtBusqueda.Text ) )
+                this.txtBusqueda.Text = this.caracteres[ this.indiceLetraActual ].ToString();
+            else
+                this.txtBusqueda.Text = this.txtBusqueda.Text.Substring( 0, this.txtBusqueda.Text.Length - 1 ) + this.caracteres[ this.indiceLetraActual ];
         }
 
         private void BuscadorSiguienteLetra()
