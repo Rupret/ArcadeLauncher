@@ -3,3 +3,8 @@ E:\DesarrolloJuegos\ArcadeLauncher\ArcadeLauncher.Core\bin\Debug\ArcadeLauncher.
 E:\DesarrolloJuegos\ArcadeLauncher\ArcadeLauncher.Core\obj\Debug\ArcadeLauncher.Core.dll
 E:\DesarrolloJuegos\ArcadeLauncher\ArcadeLauncher.Core\obj\Debug\ArcadeLauncher.Core.pdb
 E:\DesarrolloJuegos\ArcadeLauncher\ArcadeLauncher.Core\obj\Debug\ArcadeLauncher.Core.csprojResolveAssemblyReference.cache
+E:\DesarrolloGitHub\ArcadeLauncher\ArcadeLauncher.Core\bin\Debug\ArcadeLauncher.Core.dll
+E:\DesarrolloGitHub\ArcadeLauncher\ArcadeLauncher.Core\bin\Debug\ArcadeLauncher.Core.pdb
+E:\DesarrolloGitHub\ArcadeLauncher\ArcadeLauncher.Core\obj\Debug\ArcadeLauncher.Core.csprojResolveAssemblyReference.cache
+E:\DesarrolloGitHub\ArcadeLauncher\ArcadeLauncher.Core\obj\Debug\ArcadeLauncher.Core.dll
+E:\DesarrolloGitHub\ArcadeLauncher\ArcadeLauncher.Core\obj\Debug\ArcadeLauncher.Core.pdb

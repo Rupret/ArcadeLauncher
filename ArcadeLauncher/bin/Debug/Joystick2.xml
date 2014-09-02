@@ -2,37 +2,51 @@
 <MapeoJoystick xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <AccionesSegunBoton>
     <ItemAccionBotonJoystick>
-      <IdBoton>Buttons0</IdBoton>
+      <Botones>
+        <string>Buttons0</string>
+      </Botones>
       <Accion>Ejecutar</Accion>
       <AccionBuscador>NULA</AccionBuscador>
     </ItemAccionBotonJoystick>
     <ItemAccionBotonJoystick>
-      <IdBoton>Buttons1</IdBoton>
+      <Botones>
+        <string>Buttons1</string>
+      </Botones>
       <Accion>Escape</Accion>
       <AccionBuscador>NULA</AccionBuscador>
     </ItemAccionBotonJoystick>
     <ItemAccionBotonJoystick>
-      <IdBoton>Buttons5</IdBoton>
+      <Botones>
+        <string>Buttons5</string>
+      </Botones>
       <Accion>Buscar</Accion>
       <AccionBuscador>NULA</AccionBuscador>
     </ItemAccionBotonJoystick>
     <ItemAccionBotonJoystick>
-      <IdBoton>Buttons3</IdBoton>
+      <Botones>
+        <string>Buttons3</string>
+      </Botones>
       <Accion>Eliminar</Accion>
       <AccionBuscador>NULA</AccionBuscador>
     </ItemAccionBotonJoystick>
     <ItemAccionBotonJoystick>
-      <IdBoton />
+      <Botones>
+        <string />
+      </Botones>
       <Accion>CambiarListaDeJuegos</Accion>
       <AccionBuscador>NULA</AccionBuscador>
     </ItemAccionBotonJoystick>
     <ItemAccionBotonJoystick>
-      <IdBoton>Buttons4</IdBoton>
+      <Botones>
+        <string />
+      </Botones>
       <Accion>Nada</Accion>
       <AccionBuscador>Borrar</AccionBuscador>
     </ItemAccionBotonJoystick>
     <ItemAccionBotonJoystick>
-      <IdBoton>Buttons2</IdBoton>
+      <Botones>
+        <string />
+      </Botones>
       <Accion>Nada</Accion>
       <AccionBuscador>BuscarYAvanzar</AccionBuscador>
     </ItemAccionBotonJoystick>

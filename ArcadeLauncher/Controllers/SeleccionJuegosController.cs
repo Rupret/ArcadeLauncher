@@ -93,7 +93,7 @@ namespace ArcadeLauncher.Controllers
             controlador.movimientoJoystick_Arriba -= MoverHaciaArriba;
             controlador.movimientoJoystick_Derecha -= controlador_movimientoJoystick_Derecha;
             controlador.movimientoJoystick_Izquierda -= controlador_movimientoJoystick_Izquierda;
-            controlador.botonPresionado -= controlador_botonPresionado;
+            controlador.combinacionBotones -= controlador_combinacionBotones;
         }
 
         private void AsignarEventosControlador( Controlador controlador )
@@ -102,7 +102,7 @@ namespace ArcadeLauncher.Controllers
             controlador.movimientoJoystick_Arriba += MoverHaciaArriba;
             controlador.movimientoJoystick_Derecha += controlador_movimientoJoystick_Derecha;
             controlador.movimientoJoystick_Izquierda += controlador_movimientoJoystick_Izquierda;
-            controlador.botonPresionado += controlador_botonPresionado;
+            controlador.combinacionBotones += controlador_combinacionBotones;
         }
 
         private void MoverHaciaArriba( object sender, EventArgs e )
@@ -140,13 +140,22 @@ namespace ArcadeLauncher.Controllers
                 this.Refrescar( this, null );
         }
 
-        private void controlador_botonPresionado( string id, string boton )
+        private void controlador_combinacionBotones( string id, string[] botones )
         {
             MapeoJoystick mapeo = Contexto.Instancia.Controladores.ObtenerMapeoPorId( id );
-            ItemAccionBotonJoystick itemAcciones = mapeo.ObtenerItemAccionesDeBoton( boton );
+            ItemAccionBotonJoystick itemAcciones = mapeo.ObtenerItemAccionesDeBoton( botones );
 
             this.ProcesarAccionControlador( itemAcciones.Accion );
             this.ProcesarAccionBuscadorControlador( itemAcciones.AccionBuscador );
+        }
+
+        private void controlador_combinacionBotonesSoloForzarCierre( string id, string[] botones )
+        {
+            MapeoJoystick mapeo = Contexto.Instancia.Controladores.ObtenerMapeoPorId( id );
+            ItemAccionBotonJoystick itemAcciones = mapeo.ObtenerItemAccionesDeBoton( botones );
+
+            if ( itemAcciones.Accion == EnumAcciones.ForzarCierre )
+                this.CerrarEmulador();
         }
 
         private void ProcesarAccionControlador( EnumAcciones accion )
@@ -176,7 +185,7 @@ namespace ArcadeLauncher.Controllers
                 case EnumAcciones.CambiarListaDeJuegos:
                     this.OrdenarPorMasJugados();
                     break;
-                case EnumAcciones.MatarEmulador:
+                case EnumAcciones.ForzarCierre:
                     this.CerrarEmulador();
                     break;
                 default:
@@ -231,11 +240,23 @@ namespace ArcadeLauncher.Controllers
         public void EjecutarJuegoSeleccionado()
         {
             this.DetenerControladores( Contexto.Instancia.Controladores );
+            if ( Contexto.Instancia.Controladores.Controlador1 != null )
+                Contexto.Instancia.Controladores.Controlador1.combinacionBotones += controlador_combinacionBotonesSoloForzarCierre;
+
+            if ( Contexto.Instancia.Controladores.Controlador2 != null )
+                Contexto.Instancia.Controladores.Controlador2.combinacionBotones += controlador_combinacionBotonesSoloForzarCierre;
+            
             this.PlataformaSeleccionada.EjecutarJuego( this.JuegoSeleccionado );
         }
 
         private void PlataformaSeleccionada_FinalizoPrograma( object sender, EventArgs e )
         {
+            if ( Contexto.Instancia.Controladores.Controlador1 != null )
+                Contexto.Instancia.Controladores.Controlador1.combinacionBotones -= controlador_combinacionBotonesSoloForzarCierre;
+
+            if ( Contexto.Instancia.Controladores.Controlador2 != null )
+                Contexto.Instancia.Controladores.Controlador2.combinacionBotones -= controlador_combinacionBotonesSoloForzarCierre;
+
             this.IniciarControladores( Contexto.Instancia.Controladores );
         }
 

@@ -13,7 +13,6 @@ namespace ArcadeLauncher.Joystick
     {
         public delegate void BotonPresionadoDelegate( string id, string boton );
         public delegate void CombinacionBotonesDelegate( string id, string[] botones );
-        //private int cantidadDeBotones;
 
         private SharpDX.DirectInput.Joystick joystick;
         public event EventHandler movimientoJoystick_Arriba;
@@ -65,12 +64,7 @@ namespace ArcadeLauncher.Joystick
                 List<JoystickUpdate> botonesPresionados = datas.ToList().FindAll( x => x.Value == 128 &&
                     x.Offset.ToString().StartsWith( "buttons", StringComparison.InvariantCultureIgnoreCase ) );
 
-                if ( botonesPresionados.Count == 1 )
-                {
-                    if ( this.botonPresionado != null )
-                        this.botonPresionado( this.Id.ToString(), botonesPresionados[ 0 ].Offset.ToString() );
-                }
-                else if ( botonesPresionados.Count > 1 )
+                if ( botonesPresionados.Count > 0 )
                 {
                     if ( this.combinacionBotones != null )
                     {
@@ -81,7 +75,9 @@ namespace ArcadeLauncher.Joystick
                 else
                 {
                     JoystickUpdate flechaPresionadas = datas.FirstOrDefault( x => x.Offset.ToString().StartsWith( "PointOfViewControllers", StringComparison.InvariantCultureIgnoreCase ) );
-                    switch ( flechaPresionadas.Value )
+                    if ( flechaPresionadas.Offset != JoystickOffset.X )
+                    {
+                        switch ( flechaPresionadas.Value )
                         {
                             case 0:
                                 if ( this.movimientoJoystick_Arriba != null )
@@ -102,42 +98,9 @@ namespace ArcadeLauncher.Joystick
                             default:
                                 break;
                         }
+                    }
                 }
-            }
-                //foreach ( JoystickUpdate item in datas )
-                //{
-                //    //if ( item.Offset.ToString().StartsWith( "buttons", StringComparison.InvariantCultureIgnoreCase ) && 
-                //    //    this.botonPresionado != null && item.Value == 128 )
-                //    //{
-                //    //    this.botonPresionado( this.Id.ToString(), item.Offset.ToString() );
-                //    //    JoystickUpdate otroBoton = datas.FirstOrDefault( x => x.Value == 128 && x.Offset != item.Offset );
-                //    //}
-                //    //else if ( item.Offset.ToString().StartsWith( "PointOfViewControllers", StringComparison.InvariantCultureIgnoreCase ) )
-                //    if ( item.Offset.ToString().StartsWith( "PointOfViewControllers", StringComparison.InvariantCultureIgnoreCase ) )
-                //    {
-                //        switch ( item.Value )
-                //        {
-                //            case 0:
-                //                if ( this.movimientoJoystick_Arriba != null )
-                //                    this.movimientoJoystick_Arriba( this, null );
-                //                break;
-                //            case 9000:
-                //                if ( this.movimientoJoystick_Derecha != null )
-                //                    this.movimientoJoystick_Derecha( this, null );
-                //                break;
-                //            case 18000:
-                //                if ( this.movimientoJoystick_Abajo != null )
-                //                    this.movimientoJoystick_Abajo( this, null );
-                //                break;
-                //            case 27000:
-                //                if ( this.movimientoJoystick_Izquierda != null )
-                //                    this.movimientoJoystick_Izquierda( this, null );
-                //                break;
-                //            default:
-                //                break;
-                //        }
-                //    }
-                //}
+            }              
         }
     }
 }

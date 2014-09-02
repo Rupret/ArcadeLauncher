@@ -7,6 +7,8 @@
 	<Parametros></Parametros>
 	<ArchivoListaDeJuegos>Mame.xml</ArchivoListaDeJuegos>
 	<RutaRoms>c:\Emulators\Programs\Mame\roms</RutaRoms>
+	<ExtensionDeRom>zip</ExtensionDeRom>
+	<IncluirRutaCompletaRom>true</IncluirRutaCompletaRom>
 	<RutaImagenesJuegos></RutaImagenesJuegos>
 	<RutaVideosJuegos></RutaVideosJuegos>
   </Plataforma>
@@ -16,8 +18,34 @@
 	<RutaEmulador>c:\Emulators\Programs\Mame\mame.exe</RutaEmulador>
 	<Parametros></Parametros>
 	<ArchivoListaDeJuegos>Mame.xml</ArchivoListaDeJuegos>
-	<RutaRoms>c:\Emulators\Programs\Mame\roms</RutaRoms>	
+	<RutaRoms>c:\Emulators\Programs\Mame\roms</RutaRoms>
+	<ExtensionDeRom>smc</ExtensionDeRom>	
+	<IncluirRutaCompletaRom>true</IncluirRutaCompletaRom>
 	<RutaImagenesJuegos></RutaImagenesJuegos>
 	<RutaVideosJuegos></RutaVideosJuegos>
   </Plataforma>  
+  <Plataforma>
+    <Nombre>Sega Model 2</Nombre>
+    <RutaImagen>Imagenes\Plataformas\Titulos\Sega Model 2.png</RutaImagen>
+	<RutaEmulador>i:\Mame\Sega Model 2\EMULATOR.EXE</RutaEmulador>
+	<Parametros></Parametros>
+	<ArchivoListaDeJuegos>Sega Model 2.xml</ArchivoListaDeJuegos>
+	<RutaRoms>i:\Mame\Sega Model 2\roms</RutaRoms>
+	<ExtensionDeRom></ExtensionDeRom>
+	<IncluirRutaCompletaRom>false</IncluirRutaCompletaRom>
+	<RutaImagenesJuegos></RutaImagenesJuegos>
+	<RutaVideosJuegos></RutaVideosJuegos>
+  </Plataforma>  
+  <Plataforma>
+    <Nombre>Sega Model 3</Nombre>
+    <RutaImagen>Imagenes\Plataformas\Titulos\Sega Model 3.png</RutaImagen>
+	<RutaEmulador>i:\Mame\Supermodel-r271\Supermodel.exe</RutaEmulador>
+	<Parametros>-fullscreen</Parametros>
+	<ArchivoListaDeJuegos>Sega Model 3.xml</ArchivoListaDeJuegos>
+	<RutaRoms>i:\Mame\Supermodel-r271\ROMs</RutaRoms>
+	<ExtensionDeRom>zip</ExtensionDeRom>
+	<IncluirRutaCompletaRom>true</IncluirRutaCompletaRom>
+	<RutaImagenesJuegos></RutaImagenesJuegos>
+	<RutaVideosJuegos></RutaVideosJuegos>
+  </Plataforma>    
 </ArrayOfPlataforma>

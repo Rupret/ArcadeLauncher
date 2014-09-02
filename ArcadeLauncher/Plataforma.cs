@@ -27,6 +27,9 @@ namespace ArcadeLauncher
         public string UltimoJuegoEjecutado { get; set; }
         public string RutaImagenesJuegos { get; set; }
         public string RutaVideosJuegos { get; set; }
+        public string ExtensionDeRom { get; set; }
+        public bool IncluirRutaCompletaRom { get; set; }
+        
 
         public List<Juego> Juegos { get { return this._juegos; } set { this._juegos = value; } }
         [NonSerializedAttribute]
@@ -128,16 +131,26 @@ namespace ArcadeLauncher
 
         public void CerrarEmulador()
         {
-            if ( this.proceso != null && !this.proceso.HasExited )
+            try
             {
-                this.proceso.Kill();
+                if ( this.proceso != null && !this.proceso.HasExited )
+                {
+                    this.proceso.Kill();
+                }
             }
+            catch { }
         }
 
         private string ObtenerParametros( Juego juego )
         {
             StringBuilder parametros = new StringBuilder();
-            parametros.AppendFormat( "\"{0}\"", Path.Combine( this.RutaRoms, juego.NombreArchivo ) );
+            string nombreArchivoRom = this.ObtenerNombreArchivoRom( juego );
+
+            if( this.IncluirRutaCompletaRom )
+                parametros.AppendFormat( "\"{0}\"", Path.Combine( this.RutaRoms, nombreArchivoRom ) );
+            else
+                parametros.Append( nombreArchivoRom );
+
             if ( !string.IsNullOrWhiteSpace( this.Parametros ) )
             {
                 parametros.Append( " " );
@@ -145,6 +158,17 @@ namespace ArcadeLauncher
             }
 
             return parametros.ToString();
+        }
+
+        private string ObtenerNombreArchivoRom( Juego juego )
+        { 
+            string retorno;
+            if ( string.IsNullOrWhiteSpace( this.ExtensionDeRom ) )
+                retorno = Path.GetFileNameWithoutExtension( juego.NombreArchivo );
+            else
+                retorno = Path.ChangeExtension( juego.NombreArchivo, this.ExtensionDeRom );
+
+            return retorno;
         }
 
         private void ActualizarEstadisticas( Juego juego )
@@ -162,13 +186,6 @@ namespace ArcadeLauncher
             juegoEstadistica.FechaUltimaEjecucion = DateTime.Now;
 
             Serializador.Serializar<List<JuegoEstadistica>>( this.Estadisticas, archivoEstadisticas );
-        }
-
-        public  void MatarEmulador()
-        {
-            //Process procesoEmulador = Process.GetProcessById( this.idProcesoEmulador );
-            //if ( procesoEmulador != null )
-            //    procesoEmulador.Kill();
         }
 
         private void proceso_Exited( object sender, EventArgs e )

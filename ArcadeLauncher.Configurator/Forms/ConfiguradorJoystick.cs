@@ -17,30 +17,58 @@ namespace ArcadeLauncher.Configurator.Forms
     public partial class ConfiguradorJoystick : Form
     {
         delegate void controlador_botonPresionadoDelegado( string id, string boton );
+        delegate void controlador_botonesPresionadosDelegado( string id, string[] botones );
 
         private ConfiguradorJoystickController controller;
         private TextBox textBoxAConfigurar;
         private Controlador controladorAConfigurar;
+
+        private Dictionary<EnumAcciones, TextBox> mapeoAccionesTxtJ1 = new Dictionary<EnumAcciones, TextBox>();
+        private Dictionary<EnumAccionesBuscador, TextBox> mapeoAccionesBuscadorTxtJ1 = new Dictionary<EnumAccionesBuscador, TextBox>();
+        private Dictionary<EnumAcciones, TextBox> mapeoAccionesTxtJ2 = new Dictionary<EnumAcciones, TextBox>();
+        private Dictionary<EnumAccionesBuscador, TextBox> mapeoAccionesBuscadorTxtJ2 = new Dictionary<EnumAccionesBuscador, TextBox>();
 
         public ConfiguradorJoystick()
         {
             InitializeComponent();
             this.controller = new ConfiguradorJoystickController();
             this.CompletarCombosJoystick();
+            this.CargarMapeoTxtJ1();
+            this.CargarMapeoTxtJ2();
             this.CargarJoystick1();
             this.CargarJoystick2();
+        }
+
+        private void CargarMapeoTxtJ1()
+        {
+            this.mapeoAccionesTxtJ1.Add( EnumAcciones.Ejecutar, this.txtJ1Seleccionar );
+            this.mapeoAccionesTxtJ1.Add( EnumAcciones.Escape, this.txtJ1Escape );
+            this.mapeoAccionesTxtJ1.Add( EnumAcciones.Eliminar, this.txtJ1EliminarJuego );
+            this.mapeoAccionesTxtJ1.Add( EnumAcciones.Buscar, this.txtJ1Activar );
+            this.mapeoAccionesTxtJ1.Add( EnumAcciones.CambiarListaDeJuegos, this.txtJ1OrdenarPorUso );
+            this.mapeoAccionesTxtJ1.Add( EnumAcciones.ForzarCierre, this.txtJ1ForzarCierre );
+
+            this.mapeoAccionesBuscadorTxtJ1.Add( EnumAccionesBuscador.Borrar, this.txtJ1BorrarLetra );
+            this.mapeoAccionesBuscadorTxtJ1.Add( EnumAccionesBuscador.BuscarYAvanzar, this.txtJ1LetraSiguiente );
+        }
+
+        private void CargarMapeoTxtJ2()
+        {
+            this.mapeoAccionesTxtJ2.Add( EnumAcciones.Ejecutar, this.txtJ2Seleccionar );
+            this.mapeoAccionesTxtJ2.Add( EnumAcciones.Escape, this.txtJ2Escape );
+            this.mapeoAccionesTxtJ2.Add( EnumAcciones.Eliminar, this.txtJ2EliminarJuego );
+            this.mapeoAccionesTxtJ2.Add( EnumAcciones.Buscar, this.txtJ2Activar );
+            this.mapeoAccionesTxtJ2.Add( EnumAcciones.CambiarListaDeJuegos, this.txtJ2OrdenarPorUso );
+            this.mapeoAccionesTxtJ2.Add( EnumAcciones.ForzarCierre, this.txtJ2ForzarCierre );
+
+            this.mapeoAccionesBuscadorTxtJ2.Add( EnumAccionesBuscador.Borrar, this.txtJ2BorrarLetra );
+            this.mapeoAccionesBuscadorTxtJ2.Add( EnumAccionesBuscador.BuscarYAvanzar, this.txtJ2LetraSiguiente );
         }
 
         private void CargarJoystick1()
         {
             MapeoJoystick mapeo = this.controller.CargarJoystick1();
-            this.txtJ1Seleccionar.Text = this.ObtenerIdBoton( mapeo, EnumAcciones.Ejecutar );
-            this.txtJ1Escape.Text = this.ObtenerIdBoton( mapeo, EnumAcciones.Escape );
-            this.txtJ1EliminarJuego.Text = this.ObtenerIdBoton( mapeo, EnumAcciones.Eliminar );
-            this.txtJ1Activar.Text = this.ObtenerIdBoton( mapeo, EnumAcciones.Buscar );
-            this.txtJ1OrdenarPorUso.Text = this.ObtenerIdBoton( mapeo, EnumAcciones.CambiarListaDeJuegos );
-            this.txtJ1BorrarLetra.Text = this.ObtenerIdBoton( mapeo, EnumAccionesBuscador.Borrar );
-            this.txtJ1LetraSiguiente.Text = this.ObtenerIdBoton( mapeo, EnumAccionesBuscador.BuscarYAvanzar );
+            this.AsignarValoresATextBox( mapeo, this.mapeoAccionesTxtJ1, this.mapeoAccionesBuscadorTxtJ1 );
             Controlador controlador = this.controller.ObtenerControlador( mapeo.Id );
             if ( controlador != null )
                 this.cmbJoystick1.SelectedValue = controlador.Id;
@@ -49,18 +77,23 @@ namespace ArcadeLauncher.Configurator.Forms
         private void CargarJoystick2()
         {
             MapeoJoystick mapeo = this.controller.CargarJoystick2();
-            this.txtJ2Seleccionar.Text = this.ObtenerIdBoton( mapeo, EnumAcciones.Ejecutar );
-            this.txtJ2Escape.Text = this.ObtenerIdBoton( mapeo, EnumAcciones.Escape );
-            this.txtJ2EliminarJuego.Text = this.ObtenerIdBoton( mapeo, EnumAcciones.Eliminar );
-            this.txtJ2Activar.Text = this.ObtenerIdBoton( mapeo, EnumAcciones.Buscar );
-            this.txtJ2OrdenarPorUso.Text = this.ObtenerIdBoton( mapeo, EnumAcciones.CambiarListaDeJuegos );
-            this.txtJ2BorrarLetra.Text = this.ObtenerIdBoton( mapeo, EnumAccionesBuscador.Borrar );
-            this.txtJ2LetraSiguiente.Text = this.ObtenerIdBoton( mapeo, EnumAccionesBuscador.BuscarYAvanzar );
+            this.AsignarValoresATextBox( mapeo, this.mapeoAccionesTxtJ2, this.mapeoAccionesBuscadorTxtJ2 );
             Controlador controlador = this.controller.ObtenerControlador( mapeo.Id );
             if ( controlador != null )
                 this.cmbJoystick2.SelectedValue = controlador.Id;
         }
 
+        private void AsignarValoresATextBox( MapeoJoystick mapeo, Dictionary<EnumAcciones, TextBox> mapeoAcciones, Dictionary<EnumAccionesBuscador, TextBox> mapeoAccionesBuscador )
+        {
+            foreach ( var item in mapeoAcciones )
+            {
+                item.Value.Text = this.ObtenerIdBoton( mapeo, item.Key );
+            }
+            foreach ( var item in mapeoAccionesBuscador )
+            {
+                item.Value.Text = this.ObtenerIdBoton( mapeo, item.Key );
+            }
+        }
 
         private string ObtenerIdBoton( MapeoJoystick mapeo, EnumAcciones accion )
         {
@@ -68,7 +101,7 @@ namespace ArcadeLauncher.Configurator.Forms
             if ( itemAccion == null )
                 return string.Empty;
             else
-                return itemAccion.IdBoton;
+                return string.Join( " + ", itemAccion.Botones );
         }
 
         private string ObtenerIdBoton( MapeoJoystick mapeo, EnumAccionesBuscador accion )
@@ -77,7 +110,7 @@ namespace ArcadeLauncher.Configurator.Forms
             if ( itemAccion == null )
                 return string.Empty;
             else
-                return itemAccion.IdBoton;
+                return string.Join( " + ", itemAccion.Botones );
         }
 
         private void CompletarCombosJoystick()
@@ -99,7 +132,7 @@ namespace ArcadeLauncher.Configurator.Forms
             this.textBoxAConfigurar = (TextBox) this.Controls[ botonPresionado.Tag.ToString() ];
             this.textBoxAConfigurar.Text = "Presionar";
             this.controladorAConfigurar = this.controller.ObtenerControlador( this.cmbJoystick1.SelectedValue.ToString() );
-            this.controladorAConfigurar.botonPresionado += this.controlador_botonPresionado;
+            this.controladorAConfigurar.combinacionBotones += this.controladorAConfigurar_combinacionBotones;
         }
 
         private void J2Botones_Click( object sender, EventArgs e )
@@ -108,20 +141,20 @@ namespace ArcadeLauncher.Configurator.Forms
             this.textBoxAConfigurar = (TextBox) this.Controls[ botonPresionado.Tag.ToString() ];
             this.textBoxAConfigurar.Text = "Presionar";
             this.controladorAConfigurar = this.controller.ObtenerControlador( this.cmbJoystick2.SelectedValue.ToString() );
-            this.controladorAConfigurar.botonPresionado += this.controlador_botonPresionado;
+            this.controladorAConfigurar.combinacionBotones += this.controladorAConfigurar_combinacionBotones;
         }
 
-        private void controlador_botonPresionado( string id, string boton )
+        private void controladorAConfigurar_combinacionBotones( string id, string[] botones )
         {
             if ( this.InvokeRequired )
             {
-                controlador_botonPresionadoDelegado delegado = new controlador_botonPresionadoDelegado( this.controlador_botonPresionado );
-                this.Invoke( delegado, id, boton );
+                controlador_botonesPresionadosDelegado delegado = new controlador_botonesPresionadosDelegado( this.controladorAConfigurar_combinacionBotones );
+                this.Invoke( delegado, id, botones );
             }
             else
             {
-                this.textBoxAConfigurar.Text = boton;
-                this.controladorAConfigurar.botonPresionado -= this.controlador_botonPresionado;
+                this.textBoxAConfigurar.Text = string.Join( " + ", botones );
+                this.controladorAConfigurar.combinacionBotones -= this.controladorAConfigurar_combinacionBotones;
             }
         }
 
@@ -140,30 +173,32 @@ namespace ArcadeLauncher.Configurator.Forms
         {
             MapeoJoystick mapeo = new MapeoJoystick();
             mapeo.Id = ( (Guid) this.cmbJoystick1.SelectedValue ).ToString();
-            mapeo.AccionesSegunBoton.Add( new ItemAccionBotonJoystick() { Accion = EnumAcciones.Ejecutar, IdBoton = this.txtJ1Seleccionar.Text } );
-            mapeo.AccionesSegunBoton.Add( new ItemAccionBotonJoystick() { Accion = EnumAcciones.Escape, IdBoton = this.txtJ1Escape.Text } );
-            mapeo.AccionesSegunBoton.Add( new ItemAccionBotonJoystick() { Accion = EnumAcciones.Buscar, IdBoton = this.txtJ1Activar.Text } );
-            mapeo.AccionesSegunBoton.Add( new ItemAccionBotonJoystick() { Accion = EnumAcciones.Eliminar, IdBoton = this.txtJ1EliminarJuego.Text } );
-            mapeo.AccionesSegunBoton.Add( new ItemAccionBotonJoystick() { Accion = EnumAcciones.CambiarListaDeJuegos, IdBoton = this.txtJ1OrdenarPorUso.Text } );
-            mapeo.AccionesSegunBoton.Add( new ItemAccionBotonJoystick() { AccionBuscador = EnumAccionesBuscador.Borrar, IdBoton = this.txtJ1BorrarLetra.Text } );
-            mapeo.AccionesSegunBoton.Add( new ItemAccionBotonJoystick() { AccionBuscador = EnumAccionesBuscador.BuscarYAvanzar, IdBoton = this.txtJ1LetraSiguiente.Text } );
+
+            this.CargarMapeo( ref mapeo, this.mapeoAccionesTxtJ1, this.mapeoAccionesBuscadorTxtJ1 );
 
             return mapeo;
         }
-        
+
         private MapeoJoystick ObtenerMapeoJoystick2()
         {
             MapeoJoystick mapeo = new MapeoJoystick();
             mapeo.Id = ( (Guid) this.cmbJoystick2.SelectedValue ).ToString();
-            mapeo.AccionesSegunBoton.Add( new ItemAccionBotonJoystick() { Accion = EnumAcciones.Ejecutar, IdBoton = this.txtJ2Seleccionar.Text } );
-            mapeo.AccionesSegunBoton.Add( new ItemAccionBotonJoystick() { Accion = EnumAcciones.Escape, IdBoton = this.txtJ2Escape.Text } );
-            mapeo.AccionesSegunBoton.Add( new ItemAccionBotonJoystick() { Accion = EnumAcciones.Buscar, IdBoton = this.txtJ2Activar.Text } );
-            mapeo.AccionesSegunBoton.Add( new ItemAccionBotonJoystick() { Accion = EnumAcciones.Eliminar, IdBoton = this.txtJ2EliminarJuego.Text } );
-            mapeo.AccionesSegunBoton.Add( new ItemAccionBotonJoystick() { Accion = EnumAcciones.CambiarListaDeJuegos, IdBoton = this.txtJ2OrdenarPorUso.Text } );
-            mapeo.AccionesSegunBoton.Add( new ItemAccionBotonJoystick() { AccionBuscador = EnumAccionesBuscador.Borrar, IdBoton = this.txtJ2BorrarLetra.Text } );
-            mapeo.AccionesSegunBoton.Add( new ItemAccionBotonJoystick() { AccionBuscador = EnumAccionesBuscador.BuscarYAvanzar, IdBoton = this.txtJ2LetraSiguiente.Text } );
+            this.CargarMapeo( ref mapeo, this.mapeoAccionesTxtJ2, this.mapeoAccionesBuscadorTxtJ2 );
 
             return mapeo;
+        }
+        private void CargarMapeo( ref MapeoJoystick mapeo, Dictionary<EnumAcciones, TextBox> mapeoAcciones, Dictionary<EnumAccionesBuscador, TextBox> mapeoAccionesBuscador )
+        {
+            foreach ( var item in mapeoAcciones )
+            {
+                ItemAccionBotonJoystick itemAcciones = new ItemAccionBotonJoystick( item.Value.Text, item.Key );
+                mapeo.AccionesSegunBoton.Add( itemAcciones );
+            }
+            foreach ( var item in mapeoAccionesBuscador )
+            {
+                ItemAccionBotonJoystick itemAcciones = new ItemAccionBotonJoystick( item.Value.Text, item.Key );
+                mapeo.AccionesSegunBoton.Add( itemAcciones );
+            }
         }
 
         private void btnCancelar_Click( object sender, EventArgs e )

@@ -16,6 +16,6 @@ namespace ArcadeLauncher.Core.Enumerables
         PageDown,
         Eliminar,
         CambiarListaDeJuegos,
-        MatarEmulador
+        ForzarCierre
     }
 }

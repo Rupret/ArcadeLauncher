@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfJuegoEstadistica xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <JuegoEstadistica>
+    <CantidadDeEjecuciones>1</CantidadDeEjecuciones>
+    <FechaUltimaEjecucion>2014-09-01T20:47:19.4867265-03:00</FechaUltimaEjecucion>
+    <JuegoArchivo>vf3.zip</JuegoArchivo>
+  </JuegoEstadistica>
+</ArrayOfJuegoEstadistica>

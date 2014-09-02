@@ -9,3 +9,14 @@ E:\DesarrolloJuegos\ArcadeLauncher\ArcadeLauncher.Joystick\obj\Debug\ArcadeLaunc
 E:\DesarrolloJuegos\ArcadeLauncher\ArcadeLauncher.Joystick\obj\Debug\ArcadeLauncher.Joystick.pdb
 E:\DesarrolloJuegos\ArcadeLauncher\ArcadeLauncher.Joystick\bin\Debug\ArcadeLauncher.Core.dll
 E:\DesarrolloJuegos\ArcadeLauncher\ArcadeLauncher.Joystick\bin\Debug\ArcadeLauncher.Core.pdb
+E:\DesarrolloGitHub\ArcadeLauncher\ArcadeLauncher.Joystick\bin\Debug\ArcadeLauncher.Joystick.dll
+E:\DesarrolloGitHub\ArcadeLauncher\ArcadeLauncher.Joystick\bin\Debug\ArcadeLauncher.Joystick.pdb
+E:\DesarrolloGitHub\ArcadeLauncher\ArcadeLauncher.Joystick\bin\Debug\ArcadeLauncher.Core.dll
+E:\DesarrolloGitHub\ArcadeLauncher\ArcadeLauncher.Joystick\bin\Debug\SharpDX.DirectInput.dll
+E:\DesarrolloGitHub\ArcadeLauncher\ArcadeLauncher.Joystick\bin\Debug\SharpDX.dll
+E:\DesarrolloGitHub\ArcadeLauncher\ArcadeLauncher.Joystick\bin\Debug\ArcadeLauncher.Core.pdb
+E:\DesarrolloGitHub\ArcadeLauncher\ArcadeLauncher.Joystick\bin\Debug\SharpDX.xml
+E:\DesarrolloGitHub\ArcadeLauncher\ArcadeLauncher.Joystick\bin\Debug\SharpDX.DirectInput.xml
+E:\DesarrolloGitHub\ArcadeLauncher\ArcadeLauncher.Joystick\obj\Debug\ArcadeLauncher.Joystick.csprojResolveAssemblyReference.cache
+E:\DesarrolloGitHub\ArcadeLauncher\ArcadeLauncher.Joystick\obj\Debug\ArcadeLauncher.Joystick.dll
+E:\DesarrolloGitHub\ArcadeLauncher\ArcadeLauncher.Joystick\obj\Debug\ArcadeLauncher.Joystick.pdb

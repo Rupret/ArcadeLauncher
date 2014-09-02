@@ -17,6 +17,27 @@ namespace ArcadeLauncher.Core
             this.AccionesSegunBoton = new List<ItemAccionBotonJoystick>();
         }
 
+        public EnumAcciones ObtenerAccionDeBoton( string[] botones )
+        {
+            var accionSegunBoton = this.AccionesSegunBoton.Find( x => x.Botones.SequenceEqual( botones ) );
+            if ( accionSegunBoton == null )
+                return EnumAcciones.Nada;
+            else
+                return accionSegunBoton.Accion;
+        }
+
+        public ItemAccionBotonJoystick ObtenerItemAccionesDeBoton( string[] botones )
+        {
+            ItemAccionBotonJoystick accionSegunBoton = this.AccionesSegunBoton.Find( x => x.Botones.SequenceEqual( botones ) );
+            if ( accionSegunBoton == null )
+            {
+                accionSegunBoton = new ItemAccionBotonJoystick();
+                accionSegunBoton.Accion = EnumAcciones.Nada;
+                accionSegunBoton.AccionBuscador = EnumAccionesBuscador.NULA;
+            }
+            return accionSegunBoton;
+        }
+
         public EnumAcciones ObtenerAccionDeBoton( string boton )
         {
             var accionSegunBoton = this.AccionesSegunBoton.Find( x => x.IdBoton.Equals( boton, StringComparison.InvariantCultureIgnoreCase ) );

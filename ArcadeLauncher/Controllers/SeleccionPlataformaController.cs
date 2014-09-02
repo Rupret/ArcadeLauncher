@@ -55,20 +55,20 @@ namespace ArcadeLauncher.Controllers
         {
             controlador.movimientoJoystick_Abajo -= MoverHaciaAbajo;
             controlador.movimientoJoystick_Arriba -= MoverHaciaArriba;
-            controlador.botonPresionado -= controlador_botonPresionado;
+            controlador.combinacionBotones -= controlador_combinacionBotones;
         }
 
         private void AsignarEventosControlador( Controlador controlador, MapeoJoystick mapeo )
         {
             controlador.movimientoJoystick_Abajo += MoverHaciaAbajo;
             controlador.movimientoJoystick_Arriba += MoverHaciaArriba;
-            controlador.botonPresionado += controlador_botonPresionado;
+            controlador.combinacionBotones += controlador_combinacionBotones;
         }
 
-        private void controlador_botonPresionado( string id, string boton )
+        private void controlador_combinacionBotones( string id, string[] botones )
         {
             MapeoJoystick mapeo = Contexto.Instancia.Controladores.ObtenerMapeoPorId( id );
-            EnumAcciones accion = mapeo.ObtenerAccionDeBoton( boton );
+            EnumAcciones accion = mapeo.ObtenerAccionDeBoton( botones );
             switch ( accion )
             {
                 case EnumAcciones.Nada:

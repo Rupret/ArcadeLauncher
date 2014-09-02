@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfJuegoEstadistica xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <JuegoEstadistica>
-    <CantidadDeEjecuciones>41</CantidadDeEjecuciones>
-    <FechaUltimaEjecucion>2014-09-01T20:19:06.5630039-03:00</FechaUltimaEjecucion>
-    <JuegoArchivo>ssideki2.zip</JuegoArchivo>
+    <CantidadDeEjecuciones>5</CantidadDeEjecuciones>
+    <FechaUltimaEjecucion>2014-08-31T20:21:52.797571-03:00</FechaUltimaEjecucion>
+    <JuegoArchivo>vstriker.zip</JuegoArchivo>
   </JuegoEstadistica>
   <JuegoEstadistica>
     <CantidadDeEjecuciones>2</CantidadDeEjecuciones>
-    <FechaUltimaEjecucion>2014-08-30T14:30:39.3413077-03:00</FechaUltimaEjecucion>
-    <JuegoArchivo>kinst2.zip</JuegoArchivo>
+    <FechaUltimaEjecucion>2014-09-01T20:33:45.4352045-03:00</FechaUltimaEjecucion>
+    <JuegoArchivo>dynamcop.zip</JuegoArchivo>
   </JuegoEstadistica>
 </ArrayOfJuegoEstadistica>
