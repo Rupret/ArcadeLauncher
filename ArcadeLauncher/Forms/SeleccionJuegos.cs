@@ -173,7 +173,7 @@ namespace ArcadeLauncher.Forms
                     break;
 
                 case Keys.Enter:
-                    this.controller.EjecutarJuegoSeleccionado();
+                    //this.controller.EjecutarJuegoSeleccionado();
                     break;
 
                 case Keys.F3:

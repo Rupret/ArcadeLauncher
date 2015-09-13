@@ -23,14 +23,19 @@ namespace ArcadeLauncher.Core
         public ItemAccionBotonJoystick( string botones, EnumAcciones accion )
         {
 
-            this.Botones = botones.Split( new string[] { " + " }, StringSplitOptions.None );
+            this.Botones = this.ObtenerBotones( botones );
             this.Accion = accion;
         }
 
         public ItemAccionBotonJoystick( string botones, EnumAccionesBuscador accionBuscador )
         {
-            this.Botones = botones.Split( new string[] { " + " }, StringSplitOptions.None );
+            this.Botones = this.ObtenerBotones( botones );
             this.AccionBuscador = accionBuscador;
+        }
+
+        private string[] ObtenerBotones( string botones )
+        {
+            return botones.Split( new string[] { " + " }, StringSplitOptions.None );
         }
     }
 }

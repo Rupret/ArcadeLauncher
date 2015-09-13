@@ -36,6 +36,8 @@ namespace ArcadeLauncher.Forms
 
             if ( Screen.PrimaryScreen.Bounds.Width == 800 && Screen.PrimaryScreen.Bounds.Height == 600 )
                 this.Bounds = Screen.PrimaryScreen.Bounds;
+
+            this.BringToFront();
         }
 
         //private void controller_Escape( object sender, EventArgs e )

@@ -35,11 +35,16 @@ namespace ArcadeLauncher.Controllers
         private void IniciarControladores( Controladores controladores )
         {
             if ( Contexto.Instancia.Controladores.Controlador1 != null )
+            {
+                this.DetenerEventosControlador( controladores.Controlador1 );
                 this.AsignarEventosControlador( controladores.Controlador1, controladores.MapeoJoystick1 );
+            }
 
             if ( Contexto.Instancia.Controladores.Controlador2 != null )
+            {
+                this.DetenerEventosControlador( controladores.Controlador2 );
                 this.AsignarEventosControlador( controladores.Controlador2, controladores.MapeoJoystick2 );
-            
+            }
         }
 
         private void DetenerControladores( Controladores controladores )
